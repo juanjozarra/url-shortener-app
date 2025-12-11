@@ -4,6 +4,7 @@ A high-performance URL shortener built with Spring Boot, featuring monitoring wi
 
 ## Features
 
+- ✅ **React Frontend**: Modern, responsive UI built with Vite & React
 - ✅ **URL Shortening**: Convert long URLs to short codes using Base62 encoding
 - ✅ **Fast Redirects**: Cached lookups for optimal performance
 - ✅ **H2 Database**: In-memory database for quick development
@@ -28,6 +29,7 @@ docker-compose up --build
 ```
 
 2. **Access the services:**
+   - **Frontend**: http://localhost
    - **API**: http://localhost:8080
    - **Swagger UI**: http://localhost:8080/swagger-ui.html
    - **H2 Console**: http://localhost:8080/h2-console
@@ -49,6 +51,23 @@ mvn clean package
 2. **Run the application:**
 ```bash
 mvn spring-boot:run
+```
+
+### Running Frontend Locally
+
+1. **Navigate to the frontend directory:**
+```bash
+cd frontend
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+```
+
+3. **Run the development server:**
+```bash
+npm run dev
 ```
 
 ## API Endpoints
@@ -107,7 +126,13 @@ Example: http://localhost:8080/Ab3Xy
 
 ```
 ┌─────────────┐
-│   Client    │
+│   Browser   │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│  Frontend   │
+│  (React)    │
 └──────┬──────┘
        │
        ▼
